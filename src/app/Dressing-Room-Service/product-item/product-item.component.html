@@ -1,7 +1,7 @@
-<div class="card mb-3" *ngFor="let item of prod">
-  <img src={{item.imgSrc_jpg}} />
+<div class="card mb-3">
+  <img src={{prod.imgSrc_jpg}} />
   <div class="card-body">
-    <p class="lead">{{item.name}}</p>
-    <button  class="btn btn-success">Thử</button>
+    <p class="lead">{{prod.name}}</p>
+    <button class="btn btn-success" (click)="selectProduct()">Thử</button>
   </div>
 </div>

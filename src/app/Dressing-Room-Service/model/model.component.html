@@ -5,5 +5,13 @@
   <div class="bikinibottom"></div>
   <div class="feetleft"></div>
   <div class="feetright"></div>
- 
+
+  <!-- local reference, ko được đặt trùng với tên biến trong TS, k trùng với tên classs  -->
+  <h1 #demo>Demo</h1>
+
+  <h1>
+    <div *ngIf="selectedProduct?.topclothes" class="bikinitop"
+      [ngStyle]="{'background-image': 'url(' + selectedProduct.topclothes + ')', 'background-size': 'cover'}"></div>
+  </h1>
+
 </div>

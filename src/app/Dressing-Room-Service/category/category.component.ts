@@ -14,8 +14,13 @@ export class CategoryComponent implements OnInit {
   //dependency injection
   constructor(private _categoryService: CategoryService) {}
 
+  selectCate(cate: string){
+    this._categoryService.setSelectedCategory(cate);
+  }
+
   //lifecycle chạy lúc đầu
   ngOnInit(): void {
     this.cateList = this._categoryService.cateList ;
+    
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -273,6 +273,19 @@ export class ProductService {
       imgSrc_jpg: '../../../assets/images/background/background7_show.jpg',
       imgSrc_png: '../../../assets/images/background/background7.jpg',
     },
-  ]
+  ];
+
+  selectedProducts: any = {
+
+  };
+  @Output() productEmitter = new EventEmitter();
+
+  setSelectedProducts(val: { type: string, img: string }) {
+    this.selectedProducts[val.type] = val.img;
+    this.productEmitter.emit(this.selectedProducts);
+  }
+
   constructor() { }
+
+
 }
